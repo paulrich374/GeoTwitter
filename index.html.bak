@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Geo Twitter - web-based mobile app</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="jquery.mobile.flatui.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="script.js"></script> 
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	
+    
+        
+</head>
+<body class="classic">
+    <div data-role="page" id="index">
+        <div data-theme="a" data-role="header">
+            <h3>
+                Geo Twitter
+            </h3>
+        </div>
+        <div data-role="content" id="content">
+            <div id="map_canvas" style="height:100%"></div>            
+        </div>
+        
+        
+        
+        <div style="height:70%; overflow:auto;" data-theme="a" data-role="footer" data-position="fixed">
+            <!--
+            <h3>
+                Geo Twitter
+            </h3>
+            -->
+          
+<div style="min-height:70%; overflow:auto;" tid="470450008596943887" tuserid="47968" class="big clear" id="stream-first-item_">
+	<div class="figure-item">	
+		<i class="back-wrap"><em class="back" style="width:640px"> </em><b>Click to see nearby interesting tweets and photos!</b></i>
+<img src="http://cf2.thefancy.com/default/470450008596943887_40419a917898.jpg" data-src="http://cf2.thefancy.com/default/470450008596943887_40419a917898.jpg" data-width="640" data-height="640" width="640" height="640">	
+</div>
+</div>  
+         <a href="#" class="button fancy" require_login="true" tid="470450008596943887" item_img_url="http://cf2.thefancy.com/default/470450008596943887_40419a917898.jpg"><span><i></i></span> Fancy it</a>
+            <span class="figcaption"><em>Stainless Steel Freezable Shot Glasses</em></span>
+            <em class="figure-detail">
+								
+								<span class="price" style="margin-top: 0px; margin-left: 0px;">$50 <small>USD</small></span><span class="username"><em><i>·</i><a href="/theheartdirector">theheartdirector</a>
+								 + 3666</em></span>
+							</em>
+							<img src="http://cf2.thefancy.com/default/470450008596943887_40419a917898.jpg" data-src="http://cf2.thefancy.com/default/470450008596943887_40419a917898.jpg" data-width="640" data-height="640" width="640" height="640">	
+
+
+<div data-role="content">
+	<ul data-role="listview" data-inset="true" data-split-theme="d" data-split-icon="check" >
+<li>
+ <a href="index.html">
+  <img src="images/album-bb.jpg" />
+  <h3>Test 1</h3>
+ </a>
+
+<a id="delete" data-icon="delete" class="ui-li-link-alt ui-btn ui-btn-up-c" data-transition="slideup" data-rel="dialog" href="lists-split-purchase1.html" title="Delete" data-theme="c" style="left: 939px;">
+<span class="ui-btn-inner ui-btn-corner-all">
+<span class="ui-icon ui-icon-delete ui-icon-shadow">&nbsp;</span>
+</span>
+</a>
+
+<a id="edit"  data-icon="minus" data-transition="slideup" data-rel="dialog" href="lists-split-purchase2.html" title="Edit " data-theme="c">
+</a>
+</li>
+</ul>
+	
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">Overview</li>
+            <li><a href="#">Intro to jQuery Mobile</a></li>
+            <li><a href="#">Quick start guide</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Supported Platforms</a></li>
+        </ul> 	
+	
+	        <ul data-role="listview" data-inset="true">
+            <li style="height:100px;"data-role="list-divider">Overview</li>
+
+        </ul> 
+	<div class="ui-grid-a" id="restau_infos">
+		<div class="ui-block-a">
+		<h1> Le Mouffetard</h1>
+		<p><strong>  Restaurant bar in the center of Strasbourg</strong></p>
+		<p> On the menu: </p>
+			<ul>
+				<li> Milkshake with chocolat</li>
+				<li> Planchettes </li>
+				<li> Leek pie </li>
+			</ul>
+		</div>
+		<div class="ui-block-b">
+		<p><img src="restau01.jpg" alt="jeannette photo"/></p>
+		<p><a href="http://www.google.fr" rel="external" > See our website</a></p>
+		</div>
+	</div><!-- /grid-a -->
+	<hr/>
+ 
+	<div class="ui-grid-a" id="contact_infos">
+		<div class="ui-block-a">
+		<h2> Contact us</h2>
+		<p>30 Rue des Tonneliers</p>
+		<p> 67000 Strasbourg	</p>
+		</div>
+		<div class="ui-block-b">
+		<img src="01_maps.jpg" alt="plan jeanette"/>
+		</div>
+	</div><!-- /grid-a -->
+	<div id="contact_buttons">
+		<a href="http://maps.google.fr/maps?q=jeannette+et+les+cycleux&hl=fr&sll=46.75984,1.738281&sspn=10.221882,18.764648&hq=jeannette+et+les+cycleux&t=m&z=13&iwloc=A" data-role="button" data-icon="maps"> Find us on Google Maps </a>
+		<a href="tel:0388161072"  data-role="button" data-icon="tel"> Call us </a>
+	</div>
+	<hr/>
+
+
+
+            <h3 class="intro" style="background:#000;background:rgba(0, 0, 0, .7);">
+                Click to see nearby interesting tweets and photos!
+            </h3>
+            
+            
+            
+            
+        </div>
+    </div>
+
+
+
+<!--
+
+<div id='mySwipe' style='width:100%;height:100%;margin:0 auto' class='swipe'>
+  <div class='swipe-wrap'>
+    <div><img src="http://jquerymobile.com/demos/1.3.0-rc.1/docs/demos/_assets/img/sydney.jpg"></div>
+    <div><img src="http://jquerymobile.com/demos/1.3.0-rc.1/docs/demos/_assets/img/sydney.jpg"></div>
+	<div><img src="http://jquerymobile.com/demos/1.3.0-rc.1/docs/demos/_assets/img/sydney.jpg"></div>
+	<div><img src="http://jquerymobile.com/demos/1.3.0-rc.1/docs/demos/_assets/img/paris.jpg"></div>
+	<div><img src="http://media-cache-ak0.pinimg.com/236x/a7/ad/c8/a7adc8523b851f8d172f834aee2f8f93.jpg"></div>
+	<div><img src="http://jquerymobile.com/demos/1.3.0-rc.1/docs/demos/_assets/img/newyork.jpg"></div>
+	<div><img src="http://media-cache-ak0.pinimg.com/236x/5c/aa/2b/5caa2b71dddfac29d1a6c9566ff0155e.jpg"></div>
+  </div>
+</div>
+-->
+
+
+
+</body>
+</html>    

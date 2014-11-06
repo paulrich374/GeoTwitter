@@ -1,0 +1,144 @@
+﻿body {
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#333;
+line-height:18px;
+}
+
+/*
+#map {
+float:left;
+}
+*/
+.twitter {
+position:fixed;
+left:0;
+bottom:0;
+background:#000;
+background:rgba(0, 0, 0, .7);
+width:100%;
+height:180px;
+color:#fff;
+overflow:hidden;
+}
+
+.twitter .inside {
+position:absolute;
+top:0;
+left:0;
+cursor:n-resize;
+}
+
+.twitter .item {
+float:left;
+width:280px;
+padding:20px;
+}
+
+.twitter .item .img {
+float:left;
+width:48px;
+}
+
+.twitter .img img {
+-moz-box-shadow:0 0 5px #000;
+-webkit-box-shadow:0 0 5px #000;
+box-shadow:0 0 5px #000;
+}
+
+.twitter .item .entry {
+float:right;
+width:215px;
+height:140px;
+color:#eee;
+font-size:11px;
+position:relative;
+}
+
+.twitter .item .count {
+position:absolute;
+left:0;
+bottom:-10px;
+font-size:10px;
+text-transform:uppercase;
+}
+
+.twitter .item .title {
+font-size:13px;
+font-weight:bold;
+color:#fff;
+}
+
+.twitter .item .url a {
+text-decoration:underline;
+}
+
+.twitter .item p {
+margin-bottom:5px;
+}
+
+.posts {
+display:none;
+position:absolute;
+left:50%;
+margin-left:-310px;
+width:580px;
+bottom:180px;
+background:#fff;
+color:#fff;
+background:#000;
+background:rgba(0, 0, 0, .7);
+padding:20px;
+}
+
+.posts .post {
+float:left;
+clear:both;
+width:100%;
+margin-bottom:20px;
+font-size:12px;
+font-weight:bold;
+}
+
+/* ------ anchors
+-----------------------------------------------*/
+
+a {
+text-decoration:none;
+color:#fff;
+}
+               
+               
+               
+               
+                    var img = data.profile_image_url, 
+                        screen_name = data.screen_name;
+                        //alert(img);
+                    geocoder.geocode({ address: data.location }, function(response, status){
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            var x = response[0].geometry.location.lat(), 
+                                y = response[0].geometry.location.lng();
+                                //alert(x+"..."+y);
+                            marker = new google.maps.Marker({
+                                icon: img,
+                                map: map,
+                                title: screen_name,
+                                position: new google.maps.LatLng(x, y)
+                            });
+                            arr.push('<div class="item">');
+                            arr.push('<p class="img"><a href="#" class="open" rel="'+screen_name+'"><img src="'+img+'" alt="" /></a></p>');
+                            arr.push('<div class="entry">');
+                            arr.push('<a href="#" class="open title" rel="'+screen_name+'">'+data.name+'</a>');
+                            arr.push('<p class="description">'+data.description+'</p>');
+                            arr.push('<p class="url"><a href="'+data.url+'" target="_blank">'+data.url+'</a></p>');
+                            arr.push('<p class="count">Followers: '+data.followers_count+', Following: '+data.friends_count+'</p>');
+                            arr.push('</div>');
+                            arr.push('</div>');
+                            var html = arr.join('');
+                            arr = [];
+                            $('.twitter').find('.inside').append(html);
+                            google.maps.event.addListener(marker, 'click', function(){
+                                o.twitter.open(this.title);
+                            }); 
+                        }
+                    });

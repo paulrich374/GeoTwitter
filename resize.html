@@ -1,0 +1,75 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+<script type="text/javascript" >
+jQuery(function($){
+    var addedHTML = "<p class='added'>Lorem ipsum dolor sit amet, Nunc consectetur, magna quis auctor mattis, lorem neque lobortis massa, ac commodo massa sem sed nunc. Maecenas consequat consectetur dignissim. Aliquam placerat ullamcorper tristique. Sed cursus libero vel magna bibendum luctus. Nam eleifend volutpat neque, sed tincidunt odio blandit luctus. Morbi sit amet metus elit. Curabitur mollis rhoncus bibendum. Phasellus eget metus eget mi porttitor lacinia ac et augue. Nulla facilisi. Nam magna turpis, auctor vel vehicula vitae, tincidunt eget nisl. Duis posuere diam lacus.</p>";
+
+    $("#addContent").click(function(e){
+        $("#right").append(addedHTML);
+        var rightHeight = $("#right").height();
+
+        //Animate the left column to this height
+        $("#left").animate({
+            height: rightHeight
+        }, 1500);
+    });});
+</script> 
+<style>
+#outerContainer {
+        position: relative;
+        border: 1px solid red;
+        margin: 20px auto 0;
+        overflow: hidden;
+        width: 400px;}
+    .col {
+        width: 180px;
+        display: inline;
+        padding: 0 0 40px;}
+    #left {
+        float: left;
+        border: 1px solid cyan;
+        position: relative;}
+    #left img {
+        position: absolute;
+        bottom: 0;
+        left: 0;}
+    #right {
+        position: absolute;
+        top: 0;
+        left: 180px;
+        border: 1px solid green;}
+    #addContent {
+        text-align: center;
+        width: 100px;
+        margin: 20px auto 0;
+        display: block;}
+</style>
+
+</head>
+
+
+
+
+
+
+
+
+<body>
+        <a href="####" id="addContent">Add content</a>
+        <div id="outerContainer">
+            <div id="left" class="col">
+                <p>Static content</p>
+                <img src="images/innovation.gif" width="111px" height="20px">
+            </div>
+            <div id="right" class="col">
+                <p>Ajax content</p>
+            </div>
+        </div>
+    </body>
+	
+	
+	
+</html>	

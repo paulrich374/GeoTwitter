@@ -1,0 +1,10 @@
+name: Geolocation and Flickr photos taken nearby - jQuery plugin
+description:
+  - Geolocate the user and find Flickr photos taken nearby
+  - Use HTML5 Geolocation API to find the user's current location
+  - Use the Flickr API to find images that were taken within 3 miles of the users location
+  - Display one of the images in the space provided along with the title of the image.
+  - Display any status or error messages in the 'loading' space
+authors:
+  - Giulia Alfonsi electric_g
+normalize_css: yes

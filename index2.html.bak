@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Geo Twitter - web-based mobile app</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="http://ququplay.github.io/jquery-mobile-flat-ui-theme/css/jquery.mobile.flatui.css" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	
+    
+        
+</head>
+<body class="classic" style="background: #eae8e4;">
+    <div data-role="page" id="index">
+    	
+        <div data-theme="a" data-role="header"  data-position="fixed" data-position="inline" class="block">
+            <h3>
+                Geo Twitter
+            </h3>
+            <a href="login.html" data-corners="false"data-role="button" data-theme="a" class="ui-btn-right"> log in</a>
+        </div>
+        
+        <div data-role="content" id="content">
+            <div id="map_canvas" style="height:100%"></div> 
+            
+            
+            <div id="map_card" class="map_cardJS" style="display:none;position:absolute;top: 251%;width:100%;">
+            	<div style="margin: 0 10px 0 10px;">
+
+            	<img style="margin:0 auto;text-align:center;height:255px;"src="http://media-cache-ak0.pinimg.com/736x/5c/0a/51/5c0a517618b2b8b6a94c50b2017801dc.jpg" alt="jeannette photo"/>
+            	<span class="back" style="width:100%"><span style="padding:10px;position:absolute;bottom:0;left:0;font-size: 14px;line-height: 14px;font-weight: 60;"><Strong style="font-size: 18px;line-height: 18px;font-weight: 60;">Click to see nearby interesting tweets and photos!</strong><p><table class="metrics">
+                <tbody><tr>
+                <td>
+                    <div class="metric-value">831</div>
+                    <div class="metric-name">Articles</div>
+                </td>
+                
+                <td>
+                    <div class="metric-value">7,490</div>
+                    <div class="metric-name">Readers</div>
+                </td>
+                
+                <td>
+                    <div class="metric-value">4</div>
+                    <div class="metric-name">Magazines</div>
+                </td>
+                </tr>
+            	</tbody></table></p></span></span>
+            	
+            	<!--
+ 
+ 				
+ 				Examples:
+				1) https://maps.google.com/maps?f=d&saddr=New%20Ringgold,%20PA,%20USA&daddr=Allentown,%20PA,%20USA
+				2) https://maps.google.com/maps?f=d&saddr=17960&daddr=17980
+				
+				f: stands for “form” and controls the style of query form to be displayed.
+				f=d: Displays the “directions” form (two input boxes: from, to).
+				saddr: “saddr” source address. Use this when asking for driving directions.
+				daddr: “daddr” Destination address(es). Use this when asking for driving directions.
+				
+				More detailed article on the Google Maps Query Strings:
+				http://asnsblues.blogspot.in/2011/11/google-maps-query-string-parameters.html      	
+            	-->
+          	
+            	
+				<div data-role=navbar>
+				      <ul>
+				        <li><a href=#>Unvote</a></li>
+				        <li><a href=#>Vote</a></li>
+				      </ul>
+				</div>            	
+            	
+            	<ul style="border-radius: 0px;box-shadow:none;" data-role="listview" data-inset="true" data-corners="false">
+				    <li style="border-radius: 0px;box-shadow:none;" data-theme="a" data-role="list-divider">Description</li>
+				    <li style="border-radius: 0px;box-shadow:none;">Direct Relief is a non-profit, non-partisan organization that provides medical assistance to people around the world who have been affected by poverty, natural disasters, and civil unrest. DirectRelief.org</li>
+				</ul> 	
+
+				
+				<div id="contact_buttons" style="border-radius: 0px;box-shadow:none;">
+						<!--<a href="http://maps.google.fr/maps?q=jeannette+et+les+cycleux&hl=fr&sll=46.75984,1.738281&sspn=10.221882,18.764648&hq=jeannette+et+les+cycleux&t=m&z=13&iwloc=A" data-corners="false" data-role="button" data-icon="maps"> Find us on Google Maps </a>
+						-->
+						<a href="tel:0388161072"  data-shadow="false" data-corners="false" data-role="button" data-icon="tel"> Call us </a>
+						<a href="https://maps.google.com/maps?f=d&saddr=New%20Ringgold,%20PA,%20USA&daddr=Allentown,%20PA,%20USA" data-shadow="false" data-corners="false" data-role="button" data-icon="maps"> Directions </a>
+				</div>				
+				
+				
+			
+			
+				<div class="images"> <a href="#" class="ui-link">
+        			<img src="http://2.bp.blogspot.com/-CJvfdaVIcV4/UYiuWU7rELI/AAAAAAAAD2c/2IMZmNU2CB8/s320/Magic+of+nature.+Beautiful+nature.The+beauty+of+nature.+Wonderful+nature.+Nature+%25E2%2580%25AB%25281%2529%25E2%2580%25AC.jpg"></a>
+				 <a href="#" class="ui-link"> <img src="http://3.bp.blogspot.com/_LegKg3X6mtg/TSIaxy2V73I/AAAAAAAAAAw/BkTPaRb6L_A/s320/nature.jpg"></a>
+				 <a href="#" class="ui-link"> <img src="http://3.bp.blogspot.com/-El1APRe_JPs/Tfh8jO3cIaI/AAAAAAAAESY/zaeN0jHgSoY/s320/11427_Beautiful_Paintings_Of_Nature_532_1%255B1%255D-744569.jpg"></a>
+				 <a href="#" class="ui-link"> <img src="http://3.bp.blogspot.com/-gQs7Ia8HXbk/Tn8p6lPTuRI/AAAAAAAAAAs/74FUhghgH30/s320/fl1.jpg"></a>
+				 <a href="#" class="ui-link"> <img src="http://3.bp.blogspot.com/-yEZ3WUUTG68/TpazWVPp4nI/AAAAAAAAB0o/KcI64DAgkAM/s320/Viva-La-Nature-5-%25283%2529.jpg"></a>
+				 <a href="#" class="ui-link">  <img src="http://files.myopera.com/ammbarleon/albums/9834052/thumbs/Beauty%20and%20Wonder%20of%20Nature.jpg_thumb.jpg"></a>
+				 <a href="#" class="ui-link">  <img src="http://4.bp.blogspot.com/-G0Z_0TF5tCY/TmjCqm1-ZxI/AAAAAAAAFxk/psp1zzFKlnw/s320/Wallpapers+of+nature+beauty.jpg"></a>
+				 <a href="#" class="ui-link">  <img src="http://files.myopera.com/erasea/albums/883951/thumbs/1Forces%20of%20Nature%20(3).jpg_thumb.jpg"></a>
+				 <a href="#" class="ui-link">  <img src="http://4.bp.blogspot.com/-moYLGxUqcK0/Tfr4xiLZT6I/AAAAAAAADA4/2M_3SeNtB-A/s320/amazing%2Bpics%2Bof%2Bnature-3.jpg"></a>
+				 <a href="#" class="ui-link"> <img src="http://picsdesktop.com/Nature-summer/320x240/www.PicsDesktop.com_1.jpg"></a>
+				 <a href="#" class="ui-link">  <img src="http://wallpapersus.com/wallpapers/2012/02/allegory-of-nature-240x320.jpg"></a>
+				 <a href="#" class="ui-link">   <img src="http://3.bp.blogspot.com/-Yi7CGFosJ4Q/TeXnnS0pjWI/AAAAAAAAAF4/gYTy0Xac_e0/s320/roadway%2528www.cute-pictures.blogspot.com%2529.jpg"></a>
+				 <a href="#" class="ui-link"> <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Hachiko_in_National_Museum_of_Nature_and_Science.jpg/320px-Hachiko_in_National_Museum_of_Nature_and_Science.jpg"></a>
+				 <a href="#" class="ui-link">  <img src="http://wallpaperpassion.com/upload/5564/320x240-nature-wallpaper.jpg"></a>
+				 <a href="#" class="ui-link"> <img src="http://www.galawallpapers.net/thumb/85620/320/Beautiful_pictures_of_nature-025_-2.jpg"></a>
+				 <a href="#" class="ui-link">   <img src="http://files.myopera.com/ESAREESH/albums/4200612/thumbs/7beautiful-nature-photographsb.jpg_thumb.jpg"></a>
+				 <a href="#" class="ui-link">   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Austrian_Museum_of_Nature_(157595006).jpg/320px-Austrian_Museum_of_Nature_(157595006).jpg"></a>
+				      </div>
+			
+			
+			
+			
+				
+				<div class="twitter-article" id="tw1"><div class="twitter-pic"><a href="https://twitter.com/weheZabaleta" target="_blank"><img src="https://pbs.twimg.com/profile_images/378800000558072660/ca008c839ac86d5bd2d4d527e68fe6db_normal.jpeg" images="" twitter-feed-icon.png"="" width="42" height="42" alt="twitter icon"></a></div><div class="twitter-text"><p><span class="tweetprofilelink"><strong><a href="https://twitter.com/weheZabaleta" target="_blank">Julio Morales</a></strong> <a href="https://twitter.com/weheZabaleta" target="_blank">@weheZabaleta</a></span><span class="tweet-time"><a href="https://twitter.com/weheZabaleta/status/394998695524986881" target="_blank">1h</a></span><br>Mi regalo de Navidad! <a href="http://t.co/0oskzDHE2K">http://t.co/0oskzDHE2K</a></p><div id="twitter-actions"><div class="intent" id="intent-reply"><a href="https://twitter.com/intent/tweet?in_reply_to=394998695524986881" title="Reply"></a></div><div class="intent" id="intent-retweet"><a href="https://twitter.com/intent/retweet?tweet_id=394998695524986881" title="Retweet"></a></div><div class="intent" id="intent-fave"><a href="https://twitter.com/intent/favorite?tweet_id=394998695524986881" title="Favourite"></a></div></div></div></div>				
+				<div class="twitter-article" id="tw1"><div class="twitter-pic"><a href="https://twitter.com/weheZabaleta" target="_blank"><img src="https://pbs.twimg.com/profile_images/378800000558072660/ca008c839ac86d5bd2d4d527e68fe6db_normal.jpeg" images="" twitter-feed-icon.png"="" width="42" height="42" alt="twitter icon"></a></div><div class="twitter-text"><p><span class="tweetprofilelink"><strong><a href="https://twitter.com/weheZabaleta" target="_blank">Julio Morales</a></strong> <a href="https://twitter.com/weheZabaleta" target="_blank">@weheZabaleta</a></span><span class="tweet-time"><a href="https://twitter.com/weheZabaleta/status/394998695524986881" target="_blank">1h</a></span><br>Mi regalo de Navidad! <a href="http://t.co/0oskzDHE2K">http://t.co/0oskzDHE2K</a></p><div id="twitter-actions"><div class="intent" id="intent-reply"><a href="https://twitter.com/intent/tweet?in_reply_to=394998695524986881" title="Reply"></a></div><div class="intent" id="intent-retweet"><a href="https://twitter.com/intent/retweet?tweet_id=394998695524986881" title="Retweet"></a></div><div class="intent" id="intent-fave"><a href="https://twitter.com/intent/favorite?tweet_id=394998695524986881" title="Favourite"></a></div></div></div></div>	
+				<div class="twitter-article" id="tw1"><div class="twitter-pic"><a href="https://twitter.com/weheZabaleta" target="_blank"><img src="https://pbs.twimg.com/profile_images/378800000558072660/ca008c839ac86d5bd2d4d527e68fe6db_normal.jpeg" images="" twitter-feed-icon.png"="" width="42" height="42" alt="twitter icon"></a></div><div class="twitter-text"><p><span class="tweetprofilelink"><strong><a href="https://twitter.com/weheZabaleta" target="_blank">Julio Morales</a></strong> <a href="https://twitter.com/weheZabaleta" target="_blank">@weheZabaleta</a></span><span class="tweet-time"><a href="https://twitter.com/weheZabaleta/status/394998695524986881" target="_blank">1h</a></span><br>Mi regalo de Navidad! <a href="http://t.co/0oskzDHE2K">http://t.co/0oskzDHE2K</a></p><div id="twitter-actions"><div class="intent" id="intent-reply"><a href="https://twitter.com/intent/tweet?in_reply_to=394998695524986881" title="Reply"></a></div><div class="intent" id="intent-retweet"><a href="https://twitter.com/intent/retweet?tweet_id=394998695524986881" title="Retweet"></a></div><div class="intent" id="intent-fave"><a href="https://twitter.com/intent/favorite?tweet_id=394998695524986881" title="Favourite"></a></div></div></div></div>							
+				
+				<!--
+				<ul>
+				<li class="twitter-article" id="tw1"><div class="twitter-pic"><a href="https://twitter.com/weheZabaleta" target="_blank"><img src="https://pbs.twimg.com/profile_images/378800000558072660/ca008c839ac86d5bd2d4d527e68fe6db_normal.jpeg" images="" twitter-feed-icon.png"="" width="42" height="42" alt="twitter icon"></a></div><div class="twitter-text"><p><span class="tweetprofilelink"><strong><a href="https://twitter.com/weheZabaleta" target="_blank">Julio Morales</a></strong> <a href="https://twitter.com/weheZabaleta" target="_blank">@weheZabaleta</a></span><span class="tweet-time"><a href="https://twitter.com/weheZabaleta/status/394998695524986881" target="_blank">1h</a></span><br>Mi regalo de Navidad! <a href="http://t.co/0oskzDHE2K">http://t.co/0oskzDHE2K</a></p><div id="twitter-actions"><div class="intent" id="intent-reply"><a href="https://twitter.com/intent/tweet?in_reply_to=394998695524986881" title="Reply"></a></div><div class="intent" id="intent-retweet"><a href="https://twitter.com/intent/retweet?tweet_id=394998695524986881" title="Retweet"></a></div><div class="intent" id="intent-fave"><a href="https://twitter.com/intent/favorite?tweet_id=394998695524986881" title="Favourite"></a></div></div></div></li>				
+				<li class="twitter-article" id="tw1"><div class="twitter-pic"><a href="https://twitter.com/weheZabaleta" target="_blank"><img src="https://pbs.twimg.com/profile_images/378800000558072660/ca008c839ac86d5bd2d4d527e68fe6db_normal.jpeg" images="" twitter-feed-icon.png"="" width="42" height="42" alt="twitter icon"></a></div><div class="twitter-text"><p><span class="tweetprofilelink"><strong><a href="https://twitter.com/weheZabaleta" target="_blank">Julio Morales</a></strong> <a href="https://twitter.com/weheZabaleta" target="_blank">@weheZabaleta</a></span><span class="tweet-time"><a href="https://twitter.com/weheZabaleta/status/394998695524986881" target="_blank">1h</a></span><br>Mi regalo de Navidad! <a href="http://t.co/0oskzDHE2K">http://t.co/0oskzDHE2K</a></p><div id="twitter-actions"><div class="intent" id="intent-reply"><a href="https://twitter.com/intent/tweet?in_reply_to=394998695524986881" title="Reply"></a></div><div class="intent" id="intent-retweet"><a href="https://twitter.com/intent/retweet?tweet_id=394998695524986881" title="Retweet"></a></div><div class="intent" id="intent-fave"><a href="https://twitter.com/intent/favorite?tweet_id=394998695524986881" title="Favourite"></a></div></div></div></li>	
+				<li class="twitter-article" id="tw1"><div class="twitter-pic"><a href="https://twitter.com/weheZabaleta" target="_blank"><img src="https://pbs.twimg.com/profile_images/378800000558072660/ca008c839ac86d5bd2d4d527e68fe6db_normal.jpeg" images="" twitter-feed-icon.png"="" width="42" height="42" alt="twitter icon"></a></div><div class="twitter-text"><p><span class="tweetprofilelink"><strong><a href="https://twitter.com/weheZabaleta" target="_blank">Julio Morales</a></strong> <a href="https://twitter.com/weheZabaleta" target="_blank">@weheZabaleta</a></span><span class="tweet-time"><a href="https://twitter.com/weheZabaleta/status/394998695524986881" target="_blank">1h</a></span><br>Mi regalo de Navidad! <a href="http://t.co/0oskzDHE2K">http://t.co/0oskzDHE2K</a></p><div id="twitter-actions"><div class="intent" id="intent-reply"><a href="https://twitter.com/intent/tweet?in_reply_to=394998695524986881" title="Reply"></a></div><div class="intent" id="intent-retweet"><a href="https://twitter.com/intent/retweet?tweet_id=394998695524986881" title="Retweet"></a></div><div class="intent" id="intent-fave"><a href="https://twitter.com/intent/favorite?tweet_id=394998695524986881" title="Favourite"></a></div></div></div></li>							
+
+				</ul>-->
+				
+
+				
+
+				</div>
+			</div>
+                       
+        </div>
+        
+
+        
+        <!--
+        <div data-theme="a" data-role="footer" data-position="fixed">
+            <h3 class="intro" >
+                Click to see nearby interesting tweets and photos!
+            </h3>
+        </div>
+        -->
+    </div>
+
+
+
+
+
+
+<script type="text/javascript" src="script2.js"></script> 
+
+</body>
+
+
+</html>    

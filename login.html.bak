@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geo Twitter - web-based mobile app</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="http://ququplay.github.io/jquery-mobile-flat-ui-theme/css/jquery.mobile.flatui.css" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<script src="http://jquery.bassistance.de/validate/jquery.validate.js"></script>
+    
+        
+</head>
+<body class="classic" style="background: #eae8e4;">
+	
+	
+	
+	
+	
+<div data-role="page" id="registerPage">
+
+	<div data-role="header">
+		<a href="index.html" data-rel="back">Home</a>
+		<h1>Register Page</h1>
+		<a   onclick="InitPopup()" data-theme="a" class="ui-btn-right">Pop up</a>
+	</div>
+
+	<div data-role="content">	
+		<!--
+		<form action="process.cfm" method="post">
+
+			<fieldset data-role="fieldcontain"> 
+				<label for="username">Username:</label>
+				<input type="text" name="username" id="username">
+			</fieldset>
+
+			<fieldset data-role="fieldcontain"> 
+				<label for="password">Password:</label>
+				<input type="password" name="password" id="password">
+			</fieldset>
+
+			<fieldset data-role="fieldcontain"> 
+				<label for="password2">Confirm Password:</label>
+				<input type="password" name="password2" id="password2">
+			</fieldset>
+
+			<fieldset data-role="fieldcontain"> 
+				<label for="email">Email:</label>
+				<input type="email" name="email" id="email">
+			</fieldset>
+
+			<fieldset data-role="fieldcontain"> 
+				<label for="favcolor">Favorite Color:</label>
+				<select id="favcolor" name="favcolor">
+					<option>Select One</option>
+					<option>Green</option>
+					<option>Red</option>
+					<option>Blue</option>
+					<option>Yellow</option>
+				</select>
+			</fieldset>
+
+			<fieldset data-role="fieldcontain"> 
+				<label for="hometown">Home Town:</label>
+				<input type="text" name="hometown" id="hometown">
+			</fieldset>
+
+			<input type="submit" value="Register">
+
+		</form>
+		-->
+		<form action="process.cfm" method="post" id="registerForm">
+
+	<fieldset data-role="fieldcontain"> 
+		<label for="username">Username:</label>
+		<input type="text" name="username" id="username" class="required" minlength="5">
+	</fieldset>
+
+	<fieldset data-role="fieldcontain"> 
+		<label for="password">Password:</label>
+		<input type="password" name="password" id="password" class="required" minlength="5">
+	</fieldset>
+
+	<fieldset data-role="fieldcontain"> 
+		<label for="password2">Confirm Password:</label>
+		<input type="password" name="password2" id="password2" class="required" minlength="5">
+	</fieldset>
+
+	<fieldset data-role="fieldcontain"> 
+		<label for="email">Email:</label>
+		<input style="background-color: green;" type="email" name="email" id="email" class="required email" minlength="5">
+	</fieldset>
+
+	<fieldset data-role="fieldcontain"> 
+		<label for="favcolor">Favorite Color:</label>
+		<select id="favcolor" name="favcolor" class="required">
+			<option value="">Select One</option>
+			<option value="green">Green</option>
+			<option value="red">Red</option>
+			<option value="blue">Blue</option>
+			<option value="yellow">Yellow</option>
+		</select>
+	</fieldset>
+
+	<fieldset data-role="fieldcontain"> 
+		<label for="hometown">Home Town:</label>
+		<input type="text" name="hometown" id="hometown">
+	</fieldset>
+
+	<input type="submit" value="Register">
+
+</form>
+
+	</div>
+	
+	<div data-role="footer">
+		<h4>Footer content</h4>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+<div class="popup add-fancy box-rnd-shadow-2 ly-title step1 animated" data-offset="-100" style="margin-top: 58px; display: none; margin-left: 664px; opacity: 1;">
+	<div class="step step0-error">
+		<p class="ltit">Error</p>
+		<p class="message">
+			<i class="ic-error-black"></i>
+			Please try uploading again. Filetype is not supported.<br>
+			The image must be in one of the following formats: .jpeg, .jpg, .gif or .png.
+		</p>
+		<p class="btns-area"><button class="btn-blue-embo">Okay</button></p>
+	</div>
+	<div class="step step1">
+		<p class="ltit">Add to Fancy</p>
+		<ul class="case">
+			<li><a href="#step2"><span class="ico-web"></span>From Web</a></li>
+			<li><a href="#step2-upload"><span class="ico-up"></span>Upload</a></li>
+			<li class="last"><a href="mailto:list48mark@fancy.com" class="mbox_" original-title="" target="_blank"><!-- title="Email a photo directly to your collection. Name your item in the subject and write a note in the body."><a href="#step4"--><span class="ico-mail"></span>Email</a></li>
+		</ul>
+		<p class="btns-area">
+			<a href="javascript:(function(){thefancy_username='d56da7dc384f559d7bf528d9f9a97ba32231de79';var s_id='thefancy_tagger_bookmarklet_helper_js',s=document.getElementById(s_id),can_continue=true,t;if(s){t=window;try{if (t.thefancy_bookmarklet){t.thefancy_bookmarklet.tagger.clean_listeners();s.parentNode.removeChild(s)}else{can_continue=false}}catch(e5){can_continue=false}};if(can_continue){s=document.createElement('SCRIPT');s.type='text/javascript';s.id=s_id;s.src='http://fancy.com/bookmarklet/fancy_tagger.js?_='+(Math.random());document.getElementsByTagName('head')[0].appendChild(s)}})();" class="btns-blue-embo btn-install"><span>Drag this button to your Bookmarks Bar to install<b></b></span>Install Bookmarklet</a>
+			<a href="/resources/add-to-fancy" class="btns-white btn-help">How it works</a>
+		</p>
+	</div>
+	<div class="step step2">
+		<p class="ltit">Add from Web</p>
+		<div class="link">
+			<p>
+				<label>Image link or website address</label>
+				<input type="text" class="input-text url_" placeholder="http://">
+			</p>
+		</div>
+		<div class="btns-area">
+			<a href="#" class="btns-white btn-back cancel_">Go Back</a>
+			<button class="btn-blue-embo-fetch">Fetch Images</button>
+		</div>
+		<div class="progress"><span class="progress-bar"><em></em></span></div>
+	</div>
+	<div class="step step2-upload">
+		<p class="ltit">Upload to Fancy</p>
+		<form action="/upload_image?callback=_upload_image_callback" target="iframe_img_upload" method="POST" enctype="multipart/form-data"><input type="hidden" name="csrfmiddlewaretoken" value="2AHY7Jfao6fqhKwDpuWsGS6497Jt9qIu">
+			<div class="file">
+				<label>Select or drag an image here to upload.</label>
+				<input type="file" name="file" value="" accept="image/*" class="trick"><button class="btns-white btn-upload">Choose file</button><input type="text" class="input-text" placeholder="Please choose a file" readonly="">
+			</div>
+			<div class="btns-area">
+				<button type="button" class="btns-white btn-back cancel_">Go Back</button>
+				<button type="submit" class="btn-blue-embo-upload"><span>Upload</span></button>
+			</div>
+			<div class="progress" style="display: none;"><span class="progress-bar"><em style="width: 0px;"></em></span></div>
+		</form>
+	</div>
+	<div class="step step3">
+		<p class="ltit"></p>
+		<div class="upload-frm">
+			<div class="img">
+				<div class="photo-wrap"><img class="photo"><span class="shadow"></span></div>
+				<span class="controls">
+					<button class="prev"><i></i><span class="hidden">Prev</span></button>
+					<button class="next"><i></i><span class="hidden">Next</span></button>
+					<span class="cur_">1 of 10</span>
+				</span>
+				<span class="size"></span>
+			</div>
+			<div class="frm">
+				<input type="hidden" id="fancy_add-user_key" value="waldobert">
+				<input type="hidden" id="fancy_add-photo_url" value="">
+				<p>
+					<label>Title</label>
+					<input type="text" id="fancy_add-name" class="input-text">
+				</p>
+				<p>
+					<label>Web Link</label>
+					<input type="text" id="fancy_add-link" class="input-text" placeholder="http://">
+				</p>
+				<p>
+					<label>Category</label>
+					<select id="fancy_add-category" class="select-2dot selectBox categories_"><option value="" ""="">Choose a category</option><option value="Mens">Men's</option><option value="Womens">Women's</option><option value="Kids">Kids</option><option value="Pets">Pets</option><option value="Home">Home</option><option value="Gadgets">Gadgets</option><option value="Art">Art</option><option value="Food">Food</option><option value="Media">Media</option><option value="Architecture">Architecture</option><option value="travel-and-destinations">Travel &amp; Destinations</option><option value="sports-and-outdoors">Sports &amp; Outdoors</option><option value="diy-and-crafts">DIY &amp; Crafts</option><option value="Workspace">Workspace</option><option value="cars-and-vehicles">Cars &amp; Vehicles</option><option value="Other">Other</option></select>
+				</p>
+				<p>
+					<label>Lists</label>
+					<select id="fancy_add-list_ids" class="select-2dot selectBox lists_"><option value="">Add to lists...</option><option value="20512859">love it</option><option value="19562309">Fancy</option><option value="12341177">男士</option><option value="12204899">?? &amp; ?外</option><option value="11831625">?物</option><option value="11503915">儿童</option><option value="11304171">Kids</option><option value="11212583">女士</option><option value="11212581">汽? &amp; 交通工具</option><option value="11212563">小玩意</option><option value="11212545">旅行 &amp; 目的地</option><option value="10031701">DIY &amp; Crafts</option><option value="9923553">Workspace</option><option value="9689005">Pets</option><option value="9191735">Sports &amp; Outdoors</option><option value="8725265">Art</option><option value="8474189">男士?</option><option value="8474177">媒体</option><option value="8402481">自制品&amp;工?</option><option value="8332635">其他</option><option value="8297927">汽?&amp;交通工具</option><option value="8297923">孩童?</option><option value="8023197">??&amp;?外</option><option value="8023189">食品</option><option value="7974249">Media</option><option value="7917303">Food</option><option value="7884123">Women's</option><option value="7883049">Cars &amp; Vehicles</option><option value="7882689">Men's</option><option value="7882685">Home</option><option value="7814047">女士?</option><option value="7814021">首?</option><option value="7788901">旅行&amp;目的地</option><option value="7748127">Architecture</option><option value="7724375">Other</option><option value="7724261">weyeq5y</option><option value="7755933">Travel &amp; Destinations</option><option value="7724255">Gadgets</option><option value="7724223">??</option><option value="7724221">小配件</option><option value="7716369">工作空?</option></select>
+				</p>
+			</div>
+			<textarea id="fancy_add-note" maxlength="200" placeholder="Say something about this"></textarea>
+		</div>
+		<div class="btns-area">
+			<button class="btns-white btn-cancel">Cancel</button>
+			<button class="btn-blue-embo-add"><span></span>Add to Fancy</button>
+		</div>
+	</div>
+	<div class="step step4">
+		<p class="ltit">Email</p>
+		<dl>
+			<dt>Title</dt>
+			<dd><input type="text" placeholder="Enter a title for your image attached here" class="input-text"></dd>
+		</dl>
+		<dl>
+			<dt>Comment</dt>
+			<dd><textarea placeholder="Add a comment here"></textarea></dd>
+		</dl>
+		<div class="btns-area">
+			<button class="btns-white btn-cancel">Cancel</button>
+			<button class="btn-blue-embo-add"><span></span>Send</button>
+		</div>
+	</div>
+	<button class="ly-close" title="Close"><i class="ic-del-black"></i></button>
+<iframe name="iframe_img_upload" frameborder="0"></iframe></div>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div>
+
+
+<script type="text/javascript">
+/*login.html*/
+//$(document).on("pageshow", "#registerPage", function() {
+ 
+(function($) {
+  jQuery(function($) { 
+	$.validator.addMethod("passmatch", function(value) {
+			return value == $("#password").val();
+	}, 'Confirmation password must match.');
+ 
+	$("#registerForm").validate({
+ 
+		errorPlacement: function(error, element) {
+			if (element.attr("name") === "favcolor") {
+				error.insertAfter($(element).parent());
+			} else {
+				error.insertAfter(element);
+			}
+		}
+ 
+	});
+	
+	
+
+ 
+//});
+  });
+})(jQuery);
+</script> 
+<script type="text/javascript" src="script2.js"></script> 
+
+</body>
+
+
+</html>    
